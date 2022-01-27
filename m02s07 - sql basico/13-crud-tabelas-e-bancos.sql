@@ -11,7 +11,7 @@ CREATE TABLE umatabela (id INT, nome VARCHAR(20), asdrubal BOOLEAN);
 SELECT * FROM umatabela;
 -- Update
 alter table umatabela
-add column sobrenome VARCHAR(20);
+add column sobrenome VARCHAR(20) NOT NULL;
 
 alter table umatabela
 drop column asdrubal;
