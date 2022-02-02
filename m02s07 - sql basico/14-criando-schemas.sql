@@ -9,15 +9,15 @@
 -- create type status_cozinha_enum as enum ('ativo', 'manutenção')
 -- create type turno_enum as enum ('manhã', 'tarde', 'noite')
 
--- CREATE TABLE fabrica.fornos (
---   forno_id SERIAL PRIMARY KEY,
---   hora_inicio TIME NOT NULL, -- not null
---   qtd_paes INT NOT NULL CHECK (qtd_paes > 0), -- > 20 not null
---   status_forno status_forno NOT NULL, -- not null
---   temperatura FLOAT NOT NULL CHECK (temperatura >= 0), -- > 0 not null
---   tipo_pao VARCHAR(100) NOT NULL UNIQUE, -- unique not null
---   operador VARCHAR(80) NOT NULL -- not null
--- );
+CREATE TABLE fabrica.fornos (
+  forno_id SERIAL PRIMARY KEY,
+  hora_inicio TIME NOT NULL, -- not null
+  qtd_paes INT NOT NULL CHECK (qtd_paes > 0), -- > 20 not null
+  status_forno status_forno NOT NULL, -- not null
+  temperatura FLOAT NOT NULL CHECK (temperatura >= 0), -- > 0 not null
+  tipo_pao VARCHAR(100) NOT NULL UNIQUE, -- unique not null
+  operador VARCHAR(80) NOT NULL -- not null
+);
 
 -- create table fabrica.cozinhas (
 --   cozinha_id SERIAL PRIMARY KEY,
@@ -36,11 +36,11 @@
 --   turno turno_enum
 -- );
 
--- INSERT INTO fabrica.fornos
--- (hora_inicio, qtd_paes, status_forno, temperatura, tipo_pao, operador)
--- VALUES 
--- ('04:00', 100, 'aquecer', 180.6, 'Pão de queijo', 'Vitor'),
--- ('07:30', 500, 'aquecer', 200, 'Massa fina', 'Victor');
+INSERT INTO fabrica.fornos
+(hora_inicio, qtd_paes, status_forno, temperatura, tipo_pao, operador)
+VALUES 
+('04:00', 100, 'aquecer', 180.6, 'Pão de queijo', 'Vitor'),
+('07:30', 500, 'aquecer', 200, 'Massa fina', 'Victor');
 
 
 --   cozinha_id SERIAL PRIMARY KEY,
